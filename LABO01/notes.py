@@ -217,9 +217,7 @@ print(dodawanie(10, druga_liczba=15))
 
 # Rekurencja funkcji
 
-def fibonacci(n, memo=None):
-    if memo is None:
-        memo = {}
+def fibonacci(n, memo):
     if n in memo:
         return memo[n]
     if n <= 2:
@@ -229,4 +227,6 @@ def fibonacci(n, memo=None):
 
 
 to_fib = 50
-print(f"{to_fib}-ta liczba ciągu Fibonacciego to {fibonacci(to_fib)}")
+memory = {}
+for i in range(1, to_fib + 1):
+    print(f"{i}-ta liczba ciągu Fibonacciego to {fibonacci(i, memory)}")
