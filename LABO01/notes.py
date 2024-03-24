@@ -194,13 +194,13 @@ def increment(base_num, to_add=1):
 
 
 # restrykcje
-# nie można podać argumentów kluczowych przed /
+# nie można podać argumentów kluczowych przed / (tylko pozycyjne)
 
 def fun(first, second, /):
     return first + second
 
 
-# albo trzeba podać jako kluczowe po *
+# albo po * (tylko kluczowe)
 
 def fun2(*, first, second):
     return first + second
@@ -230,3 +230,6 @@ to_fib = 50
 memory = {}
 for i in range(1, to_fib + 1):
     print(f"{i}-ta liczba ciągu Fibonacciego to {fibonacci(i, memory)}")
+
+
+
