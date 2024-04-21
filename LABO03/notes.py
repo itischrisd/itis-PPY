@@ -383,7 +383,8 @@ f'Użytkownik adam - 88.4kg, 1.84m. BMI = wartość_bmi - string_stanu'
 
 uzytkownicy = {'adam': {'waga': 88.4, 'wzrost': 1.84},
                'piotr': {'waga': 100.1, 'wzrost': 1.92},
-               'kamil': {'waga': 120, 'wzrost': 1.75}}
+               'kamil': {'waga': 120, 'wzrost': 1.75},
+               'michal': {'waga': 510, 'wzrost': 1.75}}
 
 
 def bmi(uzytkownicy):
@@ -415,5 +416,7 @@ def bmi(uzytkownicy):
 uzytkownicy_po_funkcji = bmi(uzytkownicy)
 
 for uzytkownik, dane in uzytkownicy_po_funkcji.items():
-    print(f"Użytkownik {uzytkownik} - {dane['waga']}kg, {dane['wzrost']}m. BMI = {dane['BMI']} - {dane['stan']}")
-
+    if 'BMI' in dane and 'stan' in dane:
+        print(f"Użytkownik {uzytkownik} - {dane['waga']}kg, {dane['wzrost']}m. BMI = {dane['BMI']} - {dane['stan']}")
+    else:
+        print(f"Użytkownik {uzytkownik} - {dane['waga']}kg, {dane['wzrost']}m.")
